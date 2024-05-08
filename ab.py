@@ -50,5 +50,5 @@ def names(x,y):
         print("not same.")
     
 
-names('ass','sss')
+names('sxxxxiiii','siiiixxxx')
 

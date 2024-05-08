@@ -326,25 +326,274 @@
 
 
 
-class Bird():
-    def fly(self):
-        print("Birds do fly")
+# class Bird():
+#     def fly(self):
+#         print("Birds do fly")
     
 
-class Ostrich(Bird):
-    def fly(self):
-        print("Ostrich, They run")
+# class Ostrich(Bird):
+#     def fly(self):
+#         print("Ostrich, They run")
 
-class Penguin(Bird):
-    def fly(self):
-        print("penguin, They Swim")
+# class Penguin(Bird):
+#     def fly(self):
+#         print("penguin, They Swim")
 
-class Parrot(Bird):
-    def fly(self):
-        print("parrot, They fly")
+# class Parrot(Bird):
+#     def fly(self):
+#         print("parrot, They fly")
 
 
-birds = [Ostrich(), Penguin(), Parrot()]
+# birds = [Ostrich(), Penguin(), Parrot()]
 
-for bird in birds:
-    print(bird.fly())
+# for bird in birds:
+#     print(bird.fly())
+
+
+
+# data abstraction
+
+# class Fam_name:
+#     def __init__(self, name, lname, location) :
+#         self.name = name
+#         self.lname = lname
+#         self.location = location
+    
+#     def print_name(self):
+#         print(f"My name is {self.name} {self.lname}. I am from {self.location}")
+
+# class M_name(Fam_name):
+#     @abstractmethod
+#     def print_name(self):
+#         return super().print_name()
+    
+
+
+# encapsulation 
+
+# class A_Base_class:
+#     def __init__(self):
+#         self._name = "hello"
+#         self.__location = 'ktm'
+
+
+# class B_derrived_class(A_Base_class):
+#     def __init__(self):
+#         A_Base_class.__init__(self)
+#         self._name = "world"
+#         # print(self.__location)
+#         print(self._name)
+
+    
+# ob1 = A_Base_class()
+# ob2 = B_derrived_class()
+# print(ob1._A_Base_class__location)
+
+# print(dir(ob1))
+
+
+# class Normal_class:
+#     def __init__(self, name):
+#         self.name = name
+    
+#     def get_name(self):
+#         return self.name
+
+# ob1 = Normal_class("saurav")
+
+# print(ob1.name)
+
+
+# staticmethod 
+
+
+# class Static_class_example:
+#     def __init__(self):
+#         # self.val = val
+#         pass
+    
+#     @staticmethod
+#     def greater_number(x,y):
+#         return max(x,y)
+
+# static_ob = Static_class_example()
+
+
+# # accessing method from object
+# print(static_ob.greater_number(5,6))
+
+# print(Static_class_example.greater_number(55,6))
+
+from datetime import date
+
+# class Class_method_example:
+
+#     def __init__(self,val,age):
+#         self.val = val
+#         self.age = age
+#     @staticmethod
+#     def min_number(x,y):
+#         return min(x,y)+3
+
+#     @classmethod
+#     def min_num(cls,x,y):
+#         return cls(min(x,y)*2)
+#     @classmethod
+#     def fromBirthYear(cls, name, year):
+#         return cls(name, date.today().year - year)
+# ob = Class_method_example(1,23)
+
+# print(ob.min_number(3,2))
+# print(Class_method_example.min_number(2,1))
+# print(Class_method_example.min_num(2,1))
+# print(Class_method_example.fromBirthYear("saurav", 2001))
+
+
+
+# class ClassExample:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     @staticmethod
+#     def staticFunction(x):
+#         return x
+    
+
+#     @classmethod
+#     def calcBirthday(cls, name, year):
+#         return cls(name, date.today().year-year)
+    
+
+# # ce = ClassExample("sa",12)
+# age_cl = ClassExample.calcBirthday('saurav',2001)
+# print(age_cl.name, age_cl.age)
+
+
+from abc import ABC, abstractmethod
+
+# class Khaja(ABC):
+#     @abstractmethod
+#     def k_khaja(self):
+#         print("k khaney ta")
+#         pass
+
+# # class Monday_khaja(Khaja):  
+# #     def k_khaja(self):
+# #         print("monday Veg Khaja")
+
+# # class Tues_khaja(Khaja):
+# #     def k_khaja(self):
+# #         print("tues momo Khaja")
+
+# # class Wed_khaja(Khaja):
+# #     def k_khaja(self):
+# #         print("wed fryrice Khaja")
+
+# # class Thurs_khaja(Khaja):
+# #     def k_khaja(self):
+# #         print("thuurs keema noodles Khaja")
+
+# class Fri_khaja(Khaja):
+#     def k_khaja(self):
+#         print("fri part")
+
+# class sat(Khaja):
+#     def k_khaja(self):
+#         super().k_khaja()
+#         print("masu Bhat")
+
+
+# ob1 = sat()
+# ob1.k_khaja()
+
+
+
+# class Polygon(ABC):
+
+#     @abstractmethod
+#     def noofsides(self):
+#         pass
+
+
+# class Triangle(Polygon):
+#     def noofsides(self):
+#         print("I have 3 sides")
+
+# ob1 = Triangle()
+# ob1.noofsides()
+
+
+
+
+# oop exercise 
+# class Gadi:
+#     def __init__(self, max_speed, mialage):
+#         self.max_speed = max_speed
+#         self.mialage = mialage
+#     def seating_capacity(self,cap):
+#         return f"seating capacity is {cap} people"
+# # bike = Gadi(200, 25)
+# # print(bike.max_speed, bike.mialage)
+
+# class Bus(Gadi):
+#     def seating_capacity(self, cap=90):
+#         return super().seating_capacity(cap=90)
+
+# o1 = Bus(20,200)
+# print(o1.seating_capacity())
+
+
+
+class Prop_example:
+    def __init__(self, value):
+        self.value = value
+        # return value
+    @property
+    def value(self):
+        print("get val")
+        return self._value
+    
+    # @property
+    def setValue(self, value):
+        print("set val", value)
+        self._value = value
+
+    def delValue(self):
+        print("del val")
+        del self._value
+
+    # value = property(getValue, setValue, delValue,)
+
+# x = Prop_example('ram')
+# print(x.value)
+
+# x.value = 'hari'
+
+# del x.value
+
+# class Propex:
+#     def __init__(self, x) -> None:
+#         self.x = x
+
+    
+#     @property
+#     def f1(self):
+#         print("propex")
+#         return 1
+    
+
+# y = Propex('z')
+
+# print(y.f1)
+# y.f1()
+
+
+# def a1():
+#     print("jiusd")
+
+# y = a1
+
+# print(y())
+# import this
+# print(this)

@@ -10,7 +10,7 @@ userdate_real = datetime.datetime.strptime(user_date, "%Y-%m-%d").date()
 days_birthday = (datetime.date(current_date.year, userdate_real.month, userdate_real.day) - current_date).days
 if days_birthday == 0:
     print("happy birthday")
-elif days_birthday >0:
+elif days_birthday > 0:
     print(f"birthday in {days_birthday} days.")
 else:
     year_birthday = (datetime.date(current_date.year +1,userdate_real.month,userdate_real.day)- current_date).days
